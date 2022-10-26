@@ -8,13 +8,17 @@ service CustomerService {
     rpc CheckIfCustomerExists(CustomerId) returns (Exists);
     rpc GetCustomer(CustomerId) returns (Customer);
     rpc DeleteCustomer(CustomerId) returns (CustomerDeleted);
+    rpc CheckField(FieldCheck) returns (Exists);
 }
 
 message CustomerDeleted {
     bool customer_deleted = 1;
 }
 
-
+message FieldCheck {
+    string field = 1;
+    string emailOrUsername = 2;
+}
 
 message Exists {
     bool exists = 1;
