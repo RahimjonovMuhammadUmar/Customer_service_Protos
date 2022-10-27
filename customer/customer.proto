@@ -31,7 +31,8 @@ message CustomerRequest {
     string bio = 4;
     string email = 5;
     string phone_number = 6;
-    repeated AddressRequest addresses = 7;
+    string token = 7;
+    repeated AddressRequest addresses = 8;
 }
 
 message Customer {
@@ -53,7 +54,8 @@ message CustomerWithoutPost {
     string bio = 4;
     string email = 5;
     string phone_number = 6;
-    repeated Address addresses = 7;
+    string token = 7;
+    repeated Address addresses = 8;
 }
 message CustomerId {
     int32 id = 1;
