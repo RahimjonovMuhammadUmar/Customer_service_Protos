@@ -54,8 +54,9 @@ message CustomerWithoutPost {
     string bio = 4;
     string email = 5;
     string phone_number = 6;
-    string token = 7;
-    repeated Address addresses = 8;
+    string access_token = 7;
+    string refresh_token = 8;
+    repeated Address addresses = 9;
 }
 message CustomerId {
     int32 id = 1;
