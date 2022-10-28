@@ -13,7 +13,7 @@ service CustomerService {
 }
 
 message PossibleCustomers{
-    repeated CustomerWithoutPost possible_posts = 1;
+    repeated CustomerWithoutPost possible_customers = 1;
 }
 
 message CustomerName {
