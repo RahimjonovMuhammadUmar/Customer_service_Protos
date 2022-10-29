@@ -9,15 +9,19 @@ service CustomerService {
     rpc GetCustomer(CustomerId) returns (Customer);
     rpc DeleteCustomer(CustomerId) returns (CustomerDeleted);
     rpc CheckField(FieldCheck) returns (Exists);
-    rpc SearchCustomer(CustomerName) returns (PossibleCustomers);
+    rpc SearchCustomer(InfoForSearch) returns (PossibleCustomers);
 }
 
 message PossibleCustomers{
     repeated CustomerWithoutPost possible_customers = 1;
 }
 
-message CustomerName {
-    string name = 1;
+message InfoForSearch {
+    string field = 1;
+    string value = 2;
+    int32 limit = 3;
+    int32 page = 4;
+
 }
 message CustomerDeleted {
     bool customer_deleted = 1;
