@@ -43,7 +43,6 @@ message CustomerRequest {
     string bio = 4;
     string email = 5;
     string phone_number = 6;
-    string token = 7;
     repeated AddressRequest addresses = 8;
 }
 
