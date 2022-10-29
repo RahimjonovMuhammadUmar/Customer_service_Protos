@@ -19,8 +19,8 @@ message PossibleCustomers{
 message InfoForSearch {
     string field = 1;
     string value = 2;
-    string limit = 3;
-    string page = 4;
+    int32 limit = 3;
+    int32 page = 4;
 
 }
 message CustomerDeleted {
