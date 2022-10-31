@@ -19,13 +19,13 @@ message PossibleCustomers{
 message InfoForSearch {
     int32 limit = 1;
     int32 page = 2;
-    KeyValue fieldsValues = 3;
-    KeyValue orderByDesc = 4;
+    string field = 3;
+    string value = 4;
+    string orderBy = 5;
+    string ascOrDesc = 6;
 }
 
-message KeyValue {
-    map<string, string> fieldValue = 1;
-}
+
 message CustomerDeleted {
     bool customer_deleted = 1;
 }
