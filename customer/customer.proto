@@ -11,6 +11,7 @@ service CustomerService {
     rpc DeleteCustomer(CustomerId) returns (CustomerDeleted);
     rpc CheckField(FieldCheck) returns (Exists);
     rpc SearchCustomer(InfoForSearch) returns (PossibleCustomers);
+    rpc IsAdmin(Admin) returns (Admin);
 }
 
 message PossibleCustomers{
@@ -24,6 +25,11 @@ message InfoForSearch {
     string value = 4;
     string orderBy = 5;
     string ascOrDesc = 6;
+}
+
+message Admin {
+    string username = 1;
+    string password = 2;
 }
 
 message Email {
