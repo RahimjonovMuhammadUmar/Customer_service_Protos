@@ -7,6 +7,7 @@ service CustomerService {
     rpc UpdateCustomer(CustomerWithoutPost) returns (CustomerWithoutPost);
     rpc CheckIfCustomerExists(CustomerId) returns (Exists);
     rpc GetCustomer(CustomerId) returns (Customer);
+    rpc GetCustomerForLogin(Email) returns (CustomerWithoutPost);
     rpc DeleteCustomer(CustomerId) returns (CustomerDeleted);
     rpc CheckField(FieldCheck) returns (Exists);
     rpc SearchCustomer(InfoForSearch) returns (PossibleCustomers);
@@ -25,6 +26,9 @@ message InfoForSearch {
     string ascOrDesc = 6;
 }
 
+message Email {
+    string email = 1;
+}
 
 message CustomerDeleted {
     bool customer_deleted = 1;
