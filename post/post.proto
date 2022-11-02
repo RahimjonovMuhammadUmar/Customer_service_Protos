@@ -5,13 +5,21 @@ package post;
 service PostService {
     rpc CreatePost(PostRequest) returns(PostWithoutReview);
     rpc GetPostWithCustomerInfo(Id) returns (PostWithCustomerInfo);
-    rpc GetPostsOfCustomer(Id) returns (Posts);
+    rpc GetPostsOfCustomer(Ids) returns (Posts);
     rpc UpdatePost(PostWithoutReview) returns (PostWithoutReview);
     rpc DoesPostExist(Id) returns (Exist);
     rpc DeletePost(Id) returns (IsDeleted);
     rpc DeletePostByCustomerId(Id) returns (IsDeleted);
     rpc GetAllPostsWithCustomer(Empty) returns (AllPosts);
     rpc GetPostsByPage(LimitPage) returns (PostsByPage);
+    rpc GetPostInfoOnly(Id) returns (PostInfoOnly);
+}
+
+message PostInfoOnly {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 customer_id = 4;
 }
 
 
@@ -23,6 +31,11 @@ message IsDeleted {
 
 message Exist{
     bool exists = 1;
+}
+
+message Ids {
+    int32 id = 1;
+    int32 customer_id = 2;
 }
 
 message Id {
