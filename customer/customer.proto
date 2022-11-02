@@ -68,8 +68,9 @@ message Customer {
     string bio = 4;
     string email = 5;
     string phone_number = 6;
-    repeated Address addresses = 7;
-    repeated Post posts = 8;
+    string refreshToken = 7;
+    repeated Address addresses = 8;
+    repeated Post posts = 9;
 }
 
 
