@@ -4,8 +4,8 @@ package post;
 
 service PostService {
     rpc CreatePost(PostRequest) returns(PostWithoutReview);
-    rpc GetPostWithCustomerInfo(Id) returns (PostWithCustomerInfo);
-    rpc GetPostsOfCustomer(Ids) returns (Posts);
+    rpc GetPostWithCustomerInfo(Ids) returns (PostWithCustomerInfo);
+    rpc GetPostsOfCustomer(Id) returns (Posts);
     rpc UpdatePost(PostWithoutReview) returns (PostWithoutReview);
     rpc DoesPostExist(Id) returns (Exist);
     rpc DeletePost(Id) returns (IsDeleted);
