@@ -12,6 +12,7 @@ service CustomerService {
     rpc CheckField(FieldCheck) returns (Exists);
     rpc SearchCustomer(InfoForSearch) returns (PossibleCustomers);
     rpc IsAdmin(Admin) returns (Admin);
+    rpc IsModerator(Admin) returns (Admin);
 }
 
 message PossibleCustomers{
